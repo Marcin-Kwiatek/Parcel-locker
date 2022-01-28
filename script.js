@@ -34,9 +34,10 @@ function goToForm() {
                 <button class="choiceFurtherActionButton" id="everythingForTodayButton">To wszystko na dziś</button>
                 <button class="choiceFurtherActionButton" id="pickUpAnotherPackageButton">Odbierz kolejną paczkę</button>
             </div>`)
-            
+        let everythingForTodayButton = document.getElementById('everythingForTodayButton')
         let pickUpAnotherPackageButton = document.getElementById('pickUpAnotherPackageButton')
 
+        everythingForTodayButton.addEventListener("click", function () { goToFirstPage() })
         pickUpAnotherPackageButton.addEventListener("click", function () { switchToNextPackage() })
 
         function switchToNextPackage() {
@@ -44,7 +45,17 @@ function goToForm() {
             modal.remove();
             let mainInformation = document.getElementById('mainInformation')
             mainInformation.innerHTML = ''
+            let formError = document.getElementById('formError')
+            formError.innerHTML = ''
             goToForm()
+        }
+        function goToFirstPage() {
+            let modal = document.getElementById('modal');
+            modal.remove();
+            let mainInformation = document.getElementById('mainInformation')
+            mainInformation.innerHTML = ''
+            let formError = document.getElementById('formError')
+            formError.innerHTML = ''
         }
     }
 }
