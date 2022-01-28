@@ -15,19 +15,39 @@ body{
     font-weight: bold;
     letter-spacing: 1px;
 }
-.firstImformation{
+.firstInformation{
     text-align: center;
     font-size: 28px;
+}
+.mainInformation{
+    min-height: 100px;
+    margin: 50px;
+    width: 100%;
 }
 .collectPackageButton{
     background-color: red;
     width: 60%;
     height: 80px;
     cursor: pointer;
-    margin-top: 20%;
     border: none;
     font-size: 30px;
 }
 .collectPackageButton:hover {
     background-color: #DD0000;
+}
+.packageCollectionForm{
+    display: flex;
+}
+.formItem{
+    width: 30%;
+    margin: 10%;
+}
+.inputSignature{
+    width: 100%;
+}
+.inputForm{
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
 }
