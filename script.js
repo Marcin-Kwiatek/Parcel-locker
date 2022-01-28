@@ -3,6 +3,12 @@ let collectPackageButton = document.getElementById('collectPackageButton')
 collectPackageButton.addEventListener("click", function () { goToForm() })
 
 function goToForm() {
+    let modal = document.getElementById('modal');
+    console.log(modal)
+    if(modal !== null){
+        modal.remove();
+        document.getElementById('mainInformation').innerHTML = ''
+    }
     let mainInformation = document.getElementById('mainInformation')
     if (mainInformation.innerHTML === '') {
         mainInformation.innerHTML =
@@ -34,5 +40,8 @@ function goToForm() {
                 <button class="choiceFurtherActionButton" id="everythingForTodayButton">To wszystko na dziś</button>
                 <button class="choiceFurtherActionButton" id="pickUpAnotherPackageButton">Odbierz kolejną paczkę</button>
             </div>`)
+        let pickUpAnotherPackageButton = document.getElementById('pickUpAnotherPackageButton')
+
+        pickUpAnotherPackageButton.addEventListener("click", function () { goToForm() })
     }
 }
