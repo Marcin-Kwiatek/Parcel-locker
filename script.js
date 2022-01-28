@@ -17,12 +17,22 @@ function goToForm() {
                 </div>    
           </div>`
     }
-    else if(document.getElementById('phoneNumberInput').value.length===0){
+    else if (document.getElementById('phoneNumberInput').value.length === 0) {
         let formError = document.getElementById('formError')
         formError.innerHTML = 'Pole numer telefonu nie może być puste!'
     }
-    else if(document.getElementById('pickupCodeInput').value.length===0){
+    else if (document.getElementById('pickupCodeInput').value.length === 0) {
         let formError = document.getElementById('formError')
         formError.innerHTML = 'Pole kod odbioru nie może być puste!'
+    }
+    else {
+        let collectPackageButton = document.getElementById("collectPackageButton")
+        collectPackageButton.insertAdjacentHTML('afterend',
+            `<div class="modal" id='modal'>
+                <div class="modalTitle">Paczka odebrana!</div>
+                <div class="modalInformation">Zrobiłeś to w czasie 10 sekund! Czy możemy zrobić dla Ciebie coś jeszcze?</div>
+                <button class="choiceFurtherActionButton" id="everythingForTodayButton">To wszystko na dziś</button>
+                <button class="choiceFurtherActionButton" id="pickUpAnotherPackageButton">Odbierz kolejną paczkę</button>
+            </div>`)
     }
 }
