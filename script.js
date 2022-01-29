@@ -33,7 +33,8 @@ function goToForm() {
                 <div class="modalInformation">Zrobiłeś to w czasie 10 sekund! Czy możemy zrobić dla Ciebie coś jeszcze?</div>
                 <button class="choiceFurtherActionButton" id="everythingForTodayButton">To wszystko na dziś</button>
                 <button class="choiceFurtherActionButton" id="pickUpAnotherPackageButton">Odbierz kolejną paczkę</button>
-            </div>`)
+            </div>
+            <div id='obscureBackground'></div>`)
         let everythingForTodayButton = document.getElementById('everythingForTodayButton')
         let pickUpAnotherPackageButton = document.getElementById('pickUpAnotherPackageButton')
 
@@ -43,6 +44,8 @@ function goToForm() {
         function switchToNextPackage() {
             let modal = document.getElementById('modal');
             modal.remove();
+            let obscureBackground = document.getElementById('obscureBackground');
+            obscureBackground.remove();
             let mainInformation = document.getElementById('mainInformation')
             mainInformation.innerHTML = ''
             let formError = document.getElementById('formError')
@@ -52,6 +55,8 @@ function goToForm() {
         function goToFirstPage() {
             let modal = document.getElementById('modal');
             modal.remove();
+            let obscureBackground = document.getElementById('obscureBackground');
+            obscureBackground.remove();
             let mainInformation = document.getElementById('mainInformation')
             mainInformation.innerHTML = ''
             let formError = document.getElementById('formError')
