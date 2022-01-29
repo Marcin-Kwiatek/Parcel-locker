@@ -9,21 +9,21 @@ function goToForm() {
             `<div class='packageCollectionForm'>
                 <div class='formItem'>
                     <div class='inputSignature'>Numer telefonu</div>
-                    <input type='tel' class='inputForm' id='phoneNumberInput' ></input>
+                    <input type='number' class='inputForm' id='phoneNumberInput' ></input>
                 </div>    
                 <div class='formItem'>
                     <div class='inputSignature'>Kod odbioru</div>
-                    <input type='text' class='inputForm' id='pickupCodeInput'></input>
+                    <input type='number' class='inputForm' id='pickupCodeInput'></input>
                 </div>    
           </div>`
     }
-    else if (document.getElementById('phoneNumberInput').value.length === 0) {
+    else if (document.getElementById('phoneNumberInput').value.length !== 9) {
         let formError = document.getElementById('formError')
-        formError.innerHTML = 'Pole numer telefonu nie może być puste!'
+        formError.innerHTML = 'Niepoprawna wartość pola numer telefonu!'
     }
-    else if (document.getElementById('pickupCodeInput').value.length === 0) {
+    else if (document.getElementById('pickupCodeInput').value.length !== 4) {
         let formError = document.getElementById('formError')
-        formError.innerHTML = 'Pole kod odbioru nie może być puste!'
+        formError.innerHTML = 'Niepoprawna wartość pola kod odbioru!'
     }
     else {
         let collectPackageButton = document.getElementById("collectPackageButton")
