@@ -54,6 +54,7 @@ body{
     color: red;
     margin: 30px;
     font-size: 30px;
+    text-align: center;
 }
 .modal{
     position: absolute;
@@ -144,6 +145,41 @@ body{
   
     to {
       transform: rotate(1turn);
+    }
+}
+@media only screen and (max-width: 1450px) {
+    .choiceFurtherActionButton{
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 1250px) {
+    .choiceFurtherActionButton{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .button__text {
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .packageCollectionForm{
+        flex-direction: column;
+        align-items: center;
+    }
+    .formItem{
+        width: 60%;
+        margin: 10%;
+    }
+    .choiceFurtherActionButton{
+        width: 60%;
+        margin-left: 20%;
+        font-size: 20px;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .modal{
+        width: 80%;
     }
 }
   
