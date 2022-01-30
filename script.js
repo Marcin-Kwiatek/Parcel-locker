@@ -9,6 +9,13 @@ function waitForTheForm() {
         }, 3000)
     })
 }
+function waitForSendingForm() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, 4000)
+    })
+}
 
 let startTimestamp = null
 
@@ -40,6 +47,10 @@ async function goToForm() {
         formError.innerHTML = 'Niepoprawna wartość pola kod odbioru!'
     }
     else {
+        let submitFormButton = document.getElementById('collectPackageButton')
+        submitFormButton.classList.add('button--loading')
+        await waitForSendingForm()
+        submitFormButton.classList.remove('button--loading')
         let duration = getCurrentTimestamp() - startTimestamp
         let timeToFillForm = convertToSecond(duration)
         let collectPackageButton = document.getElementById("collectPackageButton")
