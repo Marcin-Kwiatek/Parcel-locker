@@ -2,9 +2,20 @@ let collectPackageButton = document.getElementById('collectPackageButton')
 
 collectPackageButton.addEventListener("click", function () { goToForm() })
 
-function goToForm() {
+function waitForTheForm() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, 3000)
+    })
+}
+
+async function goToForm() {
     let mainInformation = document.getElementById('mainInformation')
     if (mainInformation.innerHTML === '') {
+        collectPackageButton.classList.add('button--loading')
+        await waitForTheForm()
+        collectPackageButton.classList.remove('button--loading')
         mainInformation.innerHTML =
             `<div class='packageCollectionForm'>
                 <div class='formItem'>
