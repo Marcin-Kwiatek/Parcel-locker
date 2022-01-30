@@ -10,9 +10,12 @@ function waitForTheForm() {
     })
 }
 
+let startTimestamp = null
+
 async function goToForm() {
     let mainInformation = document.getElementById('mainInformation')
     if (mainInformation.innerHTML === '') {
+        startTimestamp = getCurrentTimestamp()
         collectPackageButton.classList.add('button--loading')
         await waitForTheForm()
         collectPackageButton.classList.remove('button--loading')
@@ -37,11 +40,13 @@ async function goToForm() {
         formError.innerHTML = 'Niepoprawna wartość pola kod odbioru!'
     }
     else {
+        let duration = getCurrentTimestamp() - startTimestamp
+        let timeToFillForm = convertToSecond(duration)
         let collectPackageButton = document.getElementById("collectPackageButton")
         collectPackageButton.insertAdjacentHTML('afterend',
             `<div class="modal" id='modal'>
                 <div class="modalTitle">Paczka odebrana!</div>
-                <div class="modalInformation">Zrobiłeś to w czasie 10 sekund! Czy możemy zrobić dla Ciebie coś jeszcze?</div>
+                <div class="modalInformation">Zrobiłeś to w czasie ${timeToFillForm} sekund! Czy możemy zrobić dla Ciebie coś jeszcze?</div>
                 <button class="choiceFurtherActionButton" id="everythingForTodayButton">To wszystko na dziś</button>
                 <button class="choiceFurtherActionButton" id="pickUpAnotherPackageButton">Odbierz kolejną paczkę</button>
             </div>
