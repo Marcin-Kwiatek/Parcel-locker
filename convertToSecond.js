@@ -1,3 +1,3 @@
-const convertToSecond = (milisekund) => {
-    return Math.floor(milisekund/1000)
+const convertToSecond = (miliseconds) => {
+    return Math.floor(miliseconds/1000)
 }
